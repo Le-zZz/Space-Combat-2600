@@ -5,9 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public KeyCode pressLeft;
-    public KeyCode pressRight;
-    
     private Rigidbody2D body;
     private Vector2 direction;
 
