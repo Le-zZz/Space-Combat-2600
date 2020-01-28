@@ -10,10 +10,13 @@ public class Shooting2 : MonoBehaviour
 
     float bulletForce = 20f;
 
+    public AudioSource bulletSound;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
         {
+            bulletSound.Play();
             Shoot();
         }
     }
