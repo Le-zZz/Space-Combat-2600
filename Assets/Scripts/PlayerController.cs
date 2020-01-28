@@ -42,4 +42,9 @@ public class PlayerController : MonoBehaviour
         gameObject.transform.position = startPosition;
         Debug.Log("player2 Health");
     }
+
+    public int GetPlayer1Health()
+    {
+        return health;
+    }
 }

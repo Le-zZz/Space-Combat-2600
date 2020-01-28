@@ -10,6 +10,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject panelMainMenu;
     [SerializeField] GameObject panelEndMenu;
     [SerializeField] String reloadScene;
+    [SerializeField] PlayerController playerController;
+    [SerializeField] ClickToMove clickToMove;
     void Start()
     {
         LoadMainMenu();
@@ -27,6 +29,18 @@ public class MenuManager : MonoBehaviour
             {
                 LoadMenuPause();
             }
+        }
+
+        if(playerController.GetPlayer1Health() < 1)
+        {
+            LoadEndMenu(); 
+            //Have to specify who the winner is, implement change text like "player2 win"
+        }
+
+        if(clickToMove.GetPlayer2Health() < 1)
+        {
+            LoadEndMenu();
+            //Have to specify who the winner is, implement change text like "player1 win"
         }
     }
     public void LoadMainMenu()
@@ -53,11 +67,13 @@ public class MenuManager : MonoBehaviour
     public void LoadEndMenu()
     {
         panelEndMenu.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void UnloadEndMenu()
     {
         panelEndMenu.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
     
     public void Quit()

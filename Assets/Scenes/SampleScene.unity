@@ -3991,3 +3991,5 @@ MonoBehaviour:
   panelMainMenu: {fileID: 683959140}
   panelEndMenu: {fileID: 792894066}
   reloadScene: SampleScene
+  playerController: {fileID: 1634261512}
+  clickToMove: {fileID: 30004734}

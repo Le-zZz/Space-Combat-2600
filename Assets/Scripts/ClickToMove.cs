@@ -47,5 +47,11 @@ public class ClickToMove : MonoBehaviour
         health -= 1;
         gameObject.transform.position = startPosition;
         Debug.Log("player2 Health");
+        Debug.Log(health);
+    }
+    
+    public int GetPlayer2Health()
+    {
+        return health;
     }
 }

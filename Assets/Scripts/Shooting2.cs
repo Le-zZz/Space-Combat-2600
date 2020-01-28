@@ -33,5 +33,7 @@ public class Shooting2 : MonoBehaviour
             GetComponent<ClickToMove>().Player2Die();
         }
     }
+    
+    
 
 }
