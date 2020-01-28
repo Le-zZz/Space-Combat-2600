@@ -12,6 +12,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject panelEndMenu;
     [SerializeField] TextMeshProUGUI P1Lives;
     [SerializeField] TextMeshProUGUI P2Lives;
+    [SerializeField] TextMeshProUGUI P1Win;
+    [SerializeField] TextMeshProUGUI P2Win;
     [SerializeField] String reloadScene;
     [SerializeField] PlayerController playerController;
     [SerializeField] ClickToMove clickToMove;
@@ -37,13 +39,13 @@ public class MenuManager : MonoBehaviour
         if(playerController.GetPlayer1Health() < 1)
         {
             LoadEndMenu(); 
-            //Have to specify who the winner is, implement change text like "player2 win"
+            P2Win.gameObject.SetActive(true);
         }
 
         if(clickToMove.GetPlayer2Health() < 1)
         {
             LoadEndMenu();
-            //Have to specify who the winner is, implement change text like "player1 win"
+            P1Win.gameObject.SetActive(true);
         }
     }
     public void LoadMainMenu()
