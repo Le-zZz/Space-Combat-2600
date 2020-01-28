@@ -8,6 +8,8 @@ public class ClickToMove : MonoBehaviour
     [SerializeField] float speed = 1;
     private Vector3 targetPosition;
     bool isMoving = false;
+    private int health = 3;
+    [SerializeField] private Vector3 startPosition;
 
     void Update()
     {
@@ -38,5 +40,12 @@ public class ClickToMove : MonoBehaviour
         {
             isMoving = false;
         }
+    }
+
+    public void Player2Die()
+    {
+        health -= 1;
+        gameObject.transform.position = startPosition;
+        Debug.Log("player2 Health");
     }
 }

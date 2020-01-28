@@ -30,7 +30,7 @@ public class Shooting2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet")
         {
-            Destroy(gameObject);
+            GetComponent<ClickToMove>().Player2Die();
         }
     }
 

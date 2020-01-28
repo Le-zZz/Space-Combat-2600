@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     private float speed = 3f;
     private float movementY = 0f;
     private float movementX = 0f;
-    
+    [SerializeField] private Vector3 startPosition;
+    private int health = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +34,12 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<Transform>().eulerAngles += new Vector3(0, 0, -2f);
         }
+    }
+    
+    public void Player1Die()
+    {
+        health -= 1;
+        gameObject.transform.position = startPosition;
+        Debug.Log("player2 Health");
     }
 }

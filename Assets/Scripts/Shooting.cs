@@ -12,7 +12,7 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             Shoot();
         }
@@ -30,8 +30,9 @@ public class Shooting : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet")
         {
-            Destroy(gameObject);
+            GetComponent<PlayerController>().Player1Die();
         }
     }
+    
 
 }
