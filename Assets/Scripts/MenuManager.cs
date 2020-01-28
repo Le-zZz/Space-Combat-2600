@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject panelMenuPause;
     [SerializeField] GameObject panelMainMenu;
     [SerializeField] GameObject panelEndMenu;
+    [SerializeField] TextMeshProUGUI P1Lives;
+    [SerializeField] TextMeshProUGUI P2Lives;
     [SerializeField] String reloadScene;
     [SerializeField] PlayerController playerController;
     [SerializeField] ClickToMove clickToMove;
@@ -46,11 +49,15 @@ public class MenuManager : MonoBehaviour
     public void LoadMainMenu()
     {
         panelMainMenu.gameObject.SetActive(true);
+        P1Lives.gameObject.SetActive(false);
+        P2Lives.gameObject.SetActive(false);
         Time.timeScale = 0;
     }
     public void UnloadMainMenu()
     {
         panelMainMenu.gameObject.SetActive(false);
+        P1Lives.gameObject.SetActive(true);
+        P2Lives.gameObject.SetActive(true);
         Time.timeScale = 1;
     }
     public void LoadMenuPause()
@@ -66,6 +73,8 @@ public class MenuManager : MonoBehaviour
 
     public void LoadEndMenu()
     {
+        P1Lives.gameObject.SetActive(false);
+        P2Lives.gameObject.SetActive(false);
         panelEndMenu.gameObject.SetActive(true);
         Time.timeScale = 0;
     }

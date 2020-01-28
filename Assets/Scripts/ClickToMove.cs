@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ClickToMove : MonoBehaviour
@@ -10,6 +12,7 @@ public class ClickToMove : MonoBehaviour
     bool isMoving = false;
     private int health = 3;
     [SerializeField] private Vector3 startPosition;
+    [SerializeField] TextMeshProUGUI P2Lives;
 
     void Update()
     {
@@ -45,6 +48,8 @@ public class ClickToMove : MonoBehaviour
     public void Player2Die()
     {
         health -= 1;
+        String healthString = health.ToString();
+        P2Lives.text = "P2 lives : " + healthString ;
         gameObject.transform.position = startPosition;
         Debug.Log("player2 Health");
         Debug.Log(health);

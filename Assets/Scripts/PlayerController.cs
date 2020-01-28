@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -12,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float movementY = 0f;
     private float movementX = 0f;
     [SerializeField] private Vector3 startPosition;
+    [SerializeField] TextMeshProUGUI P1Lives;
     private int health = 3;
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public void Player1Die()
     {
         health -= 1;
+        String healthString = health.ToString();
+        P1Lives.text = "P1 lives : " + healthString ;
         gameObject.transform.position = startPosition;
         Debug.Log("player2 Health");
     }
